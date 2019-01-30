@@ -2,17 +2,19 @@
 
 module.exports = function(sails) {
     
-    var setup = require('./lib/setup.js');
-    var connect = require('./lib/connect.js');
-    var sendCode = require('./lib/sendCode.js');
+    const setup = require('./lib/setup.js');
+    const connect = require('./lib/connect.js');
+    const sendCode = require('./lib/sendCode.js');
+    const exec = require('./lib/exec')
 
     gladys.on('ready', function(){
         connect();
     });
     
     return {
-        connect: connect,
-        setup: setup,
-        sendCode: sendCode
+        connect,
+        setup,
+        sendCode,
+        exec
     };
 };
